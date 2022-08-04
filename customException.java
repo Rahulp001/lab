@@ -73,7 +73,16 @@ public class Exception_lab {
 		System.out.println("A password must have at least eight characters.");
 		System.out.println("A password consists of only letters and digits.");
 		System.out.println("A password must contain at least two digits.");
-		password=sc.next();	
+		password=sc.next();
+		System.out.println("Enter your password to confirm :");
+		String reapssword=sc.next();
+		if(password!=repassword){
+		System.out.println("password did not match");
+		}else
+		{
+			System.out.println("password matched");
+		}
+		
 		Exception_lab obj1 = new Exception_lab(userId,password);
 		obj1.display();
 		
