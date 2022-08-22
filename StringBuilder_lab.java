@@ -25,6 +25,29 @@ public class StringBuilder_lab {
 	}
 	public static void permutaions() {
 		// i tried but dont know the logic 
+		java.util.Scanner sc= new java.util.Scanner(System.in);
+    	System.out.println("enter the string value");
+    	String str=sc.nextLine();
+    	recur(str,"");
+    	
+	}
+    	public static void recur(String str, String nud) {
+    	int i;
+    	if(str.length()==0) {
+    		System.out.println(nud);
+    	}
+		for(i=0;i<str.length();i++) {
+			char ch=str.charAt(i);
+			//System.out.println("ch "+ch);
+			String ls=str.substring(0, i);
+			//System.out.println("ls"+ls);
+			String rs=str.substring(i+1);
+			String Newud=ls+rs;
+			//System.out.println("New="+Newud);
+			recur(Newud,nud+ch);
+
+		}
+	}
 		
 	}
     public static void palindome() {
