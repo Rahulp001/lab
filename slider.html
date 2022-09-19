@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider_doc</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            
+            
+        }
+
+        img {
+
+            width: 100%;
+            
+
+        }
+        .slide{
+            display: flex;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/f9/c8/d9/f9c8d967f2a318c7433e7a101ef0c57d.jpg" id="lastclone">
+            <img src="https://wonderfulengineering.com/wp-content/uploads/2013/12/porsche-custom-bike-wallpapers-porsche-custom-bike-stock-photos_1920x1080.jpg"
+                alt="img1">
+            <img src="https://wallpaper.dog/large/20493175.jpg" alt="img2">
+            <img src="https://nepaldrives.com/wp-content/uploads/2020/11/Honda-Hornet-2.0-Repsol-Edition-India-Featured-Image-1110x577.jpg"
+                alt="img3">
+            <img src="https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/royal-enfield-roadster-650.jpg"
+                alt="img4">
+            <img src="https://i.pinimg.com/originals/f9/c8/d9/f9c8d967f2a318c7433e7a101ef0c57d.jpg" alt="img5">
+            <img src="https://wonderfulengineering.com/wp-content/uploads/2013/12/porsche-custom-bike-wallpapers-porsche-custom-bike-stock-photos_1920x1080.jpg"
+            id="firstclone">
+        </div>
+    </div>
+    <button id="prevBtn">prev</button>
+    <button id="nextBtn">next</button>
+<script>
+    const Slide = document.querySelector('.slide');
+    const image = document.querySelectorAll('.slide img');
+    // button
+    const btn = document.querySelector('#prevBtn');
+    const btn1 = document.querySelector('#nextBtn');
+
+    let count=1;
+</script>
+</body>
+
+</html>
