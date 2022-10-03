@@ -136,6 +136,78 @@ public class BookStore {
 		con.close();
 		
 	}
+	public void searchByTitle(String st1) throws Exception {
+		String url = "jdbc:mysql://localhost:3306/bookStore";
+		String user = "root";
+		String pass = "Xfire@786";
+		
+		String query = " select * from Book where title=?";
+		Connection con = DriverManager.getConnection(url,user,pass);
+		PreparedStatement ps = con.prepareStatement(query);
+		ps.setString(1,st1);
+		ResultSet res = ps.executeQuery();
+		while(res.next()) {
+			 String id = res.getString("bookId");
+             String title = res.getString("title");
+             String category = res.getString("category");
+             String author = res.getString("author");
+             float price = res.getFloat("price");
+             System.out.println(id + "\t\t" + title
+                                + "\t\t" + category+ "\t\t"+author+"\t\t"+price);
+		}
+		ps.close();
+		con.close();
+		
+		
+	}
+	public void searchByAuthor(String st1) throws Exception {
+		String url = "jdbc:mysql://localhost:3306/bookStore";
+		String user = "root";
+		String pass = "Xfire@786";
+		
+		String query = " select * from Book where author=?";
+		Connection con = DriverManager.getConnection(url,user,pass);
+		PreparedStatement ps = con.prepareStatement(query);
+		ps.setString(1,st1);
+		ResultSet res = ps.executeQuery();
+		while(res.next()) {
+			 String id = res.getString("bookId");
+             String title = res.getString("title");
+             String category = res.getString("category");
+             String author = res.getString("author");
+             float price = res.getFloat("price");
+             System.out.println(id + "\t\t" + title
+                                + "\t\t" + category+ "\t\t"+author+"\t\t"+price);
+		}
+		ps.close();
+		con.close();
+		
+		
+	}
+	public void displayAll() throws Exception {
+		String url = "jdbc:mysql://localhost:3306/bookStore";
+		String user = "root";
+		String pass = "Xfire@786";
+		
+		String query = " select * from Book";
+		Connection con = DriverManager.getConnection(url,user,pass);
+		PreparedStatement ps = con.prepareStatement(query);
+		
+		ResultSet res = ps.executeQuery();
+		while(res.next()) {
+			 String id = res.getString("bookId");
+             String title = res.getString("title");
+             String category = res.getString("category");
+             String author = res.getString("author");
+             float price = res.getFloat("price");
+             System.out.println(id + "\t\t" + title
+                                + "\t\t" + category+ "\t\t"+author+"\t\t"+price);
+		}
+		ps.close();
+		con.close();
+		
+	}
+
 	
 
 }
@@ -156,7 +228,10 @@ public class BookUtil  {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		BookStore obj1= new BookStore();
-		obj1.addBook();
+		//obj1.addBook();
+//		obj1.searchByTitle("how");
+//		obj1.searchByAuthor("maharishi");
+		obj1.displayAll();
 	}
 	
 	
